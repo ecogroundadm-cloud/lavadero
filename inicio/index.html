@@ -30,9 +30,12 @@ body{color:#e8e5de;font-family:Montserrat,Arial,sans-serif;font-weight:300;-webk
 .rate .n{font-family:Anton,Impact,sans-serif;font-size:18px}
 .rate .st{position:relative;display:inline-block;letter-spacing:2px;color:#4a4a4a}
 .rate .st i{position:absolute;left:0;top:0;width:94%;overflow:hidden;white-space:nowrap;color:#FBBC04;font-style:normal}
+.snd{position:absolute;z-index:2;top:22px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(10,10,10,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.snd svg{width:22px;height:22px;fill:#fff}.snd .w{display:none}.snd.on .w{display:block}.snd.on .x{display:none}
 </style></head><body>
 <section class="s">
-<video autoplay muted loop playsinline preload="auto" poster="poster.jpg"><source src="inicio.mp4" type="video/mp4"></video>
+<video id="hv" autoplay muted loop playsinline preload="auto" poster="poster.jpg"><source src="inicio.mp4" type="video/mp4"></video>
+<button class="snd" id="snd" aria-label="Activar sonido"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path class="x" d="M16 9l5 6M21 9l-5 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
 <div class="c">
 <img class="logo" src="../logo.png" alt="La Guardería">
 <div class="line"></div>
@@ -45,4 +48,5 @@ body{color:#e8e5de;font-family:Montserrat,Arial,sans-serif;font-weight:300;-webk
 </div>
 <a class="rate" href="https://maps.google.com/?q=La+Guarder%C3%ADa+Auto+House+Hip%C3%B3lito+Yrigoyen+3756+Mar+del+Plata" target="_blank" rel="noopener"><span class="n">4,7</span><span class="st">★★★★★<i>★★★★★</i></span>Reseñas en Google</a>
 </section>
+<script>(function(){var hv=document.getElementById('hv'),sb=document.getElementById('snd');sb.onclick=function(){hv.muted=!hv.muted;if(!hv.muted){hv.volume=1;hv.play()}sb.classList.toggle('on',!hv.muted);sb.setAttribute('aria-label',hv.muted?'Activar sonido':'Silenciar')}})();</script>
 </body></html>
